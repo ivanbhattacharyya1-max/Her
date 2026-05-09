@@ -4,45 +4,67 @@ import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden min-h-screen">
+    <main className="relative overflow-hidden bg-gradient-to-b from-pink-100 via-rose-100 to-pink-200 min-h-screen">
 
-      {/* 🌌 AURORA BACKGROUND */}
+      {/* 🌌 BREATHING AURORA BACKGROUND (FIXED) */}
       <div className="fixed inset-0 -z-20 overflow-hidden">
 
-        <div className="absolute w-[600px] h-[600px] bg-pink-300/40 blur-[140px] rounded-full top-[-200px] left-[-200px] animate-pulse" />
-        <div className="absolute w-[500px] h-[500px] bg-rose-400/30 blur-[160px] rounded-full bottom-[-200px] right-[-200px] animate-pulse" />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.4, 0.7, 0.4]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity
+          }}
+          className="absolute w-[600px] h-[600px] bg-pink-300/40 blur-[140px] rounded-full top-[-200px] left-[-200px]"
+        />
+
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity
+          }}
+          className="absolute w-[500px] h-[500px] bg-rose-400/30 blur-[160px] rounded-full bottom-[-200px] right-[-200px]"
+        />
+
         <div className="absolute w-[400px] h-[400px] bg-purple-300/30 blur-[140px] rounded-full top-[40%] left-[60%] animate-pulse" />
 
         <div className="absolute inset-0 opacity-[0.08] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
       </div>
 
-      {/* ✨ STARS */}
+      {/* ✨ FIXED STAR SYSTEM */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        {Array.from({ length: 60 }).map((_, i) => (
+        {Array.from({ length: 50 }).map((_, i) => (
           <motion.div
             key={i}
             initial={{
-              y: "120vh",
+              y: "110vh",
               x: Math.random() * 1600,
-              opacity: 0,
-              scale: Math.random()
+              opacity: 0
             }}
             animate={{
               y: "-20vh",
-              opacity: [0, 1, 1, 0],
               x: [
                 Math.random() * 1600,
                 Math.random() * 1600,
                 Math.random() * 1600
-              ]
+              ],
+              opacity: [0, 1, 1, 0]
             }}
             transition={{
-              duration: 12 + Math.random() * 20,
+              duration: 15 + Math.random() * 20,
               repeat: Infinity,
               ease: "linear",
-              delay: Math.random() * 8
+              delay: i * 0.3
             }}
-            className="absolute"
+            className="absolute will-change-transform"
+            style={{ transform: "translate3d(0,0,0)" }}
           >
             <div className="relative">
               <div className="absolute inset-0 blur-lg bg-white rounded-full w-2 h-2 opacity-60" />
@@ -52,21 +74,30 @@ export default function Home() {
         ))}
       </div>
 
-      {/* 💖 HEARTS */}
+      {/* 💖 FIXED HEART SYSTEM */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        {Array.from({ length: 20 }).map((_, i) => (
+        {Array.from({ length: 18 }).map((_, i) => (
           <motion.div
             key={i}
-            initial={{ y: "110vh", x: Math.random() * 1200, opacity: 0 }}
+            initial={{
+              y: "120vh",
+              x: Math.random() * 1200,
+              opacity: 0
+            }}
             animate={{
               y: "-20vh",
-              opacity: [0, 1, 1, 0],
-              x: Math.random() * 1200
+              x: [
+                Math.random() * 1200,
+                Math.random() * 1200,
+                Math.random() * 1200
+              ],
+              opacity: [0, 1, 1, 0]
             }}
             transition={{
-              duration: 10 + Math.random() * 15,
+              duration: 18 + Math.random() * 10,
               repeat: Infinity,
-              delay: Math.random() * 10
+              ease: "linear",
+              delay: i * 0.8
             }}
             className="absolute text-pink-400 text-xl"
           >
@@ -76,9 +107,7 @@ export default function Home() {
       </div>
 
       {/* ================= HERO ================= */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-
-        <div className="absolute w-[500px] h-[500px] bg-white/30 blur-[140px] rounded-full" />
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
 
         <motion.div
           animate={{ scale: [1, 1.2, 1] }}
@@ -104,10 +133,12 @@ export default function Home() {
         >
           Vishakha,
           <br /><br />
-          Somewhere deep in my heart, I already know that one day
-          you’re going to create the warmest, most beautiful home
-          filled with love, laughter, tiny footsteps, and a future
-          I’ll always cherish with you.
+          Somewhere deep in my heart,
+          I already know that one day
+          you’re going to create the warmest,
+          most beautiful home filled with love,
+          laughter, tiny footsteps,
+          and a future I’ll always cherish with you.
         </motion.p>
 
         <motion.img
@@ -117,46 +148,51 @@ export default function Home() {
           src="/us1.jpg"
           className="w-80 h-80 object-cover rounded-full mt-16 border-[8px] border-white shadow-[0_0_80px_rgba(255,255,255,0.8)]"
         />
+
       </section>
 
       {/* ================= MEMORIES ================= */}
-      <motion.section
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="px-6 py-24"
-      >
+      <section className="px-6 py-24">
 
-        <h2 className="text-6xl font-black text-center text-rose-700 mb-20">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-6xl font-black text-center text-rose-700 mb-20"
+        >
           Our Memories
-        </h2>
+        </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-10">
+
           {["/us1.jpg", "/us2.jpg", "/us3.jpg"].map((img, index) => (
             <motion.img
               key={index}
-              whileHover={{ scale: 1.05, rotate: index % 2 ? -1 : 1 }}
+              whileHover={{
+                scale: 1.05,
+                rotate: index % 2 === 0 ? 1 : -1
+              }}
               src={img}
-              className="rounded-[40px] h-[500px] w-full object-cover shadow-2xl border border-white/60 hover:shadow-[0_30px_80px_rgba(255,105,180,0.4)] transition duration-700"
+              className="rounded-[40px] h-[500px] w-full object-cover shadow-2xl border border-white hover:shadow-[0_30px_80px_rgba(255,105,180,0.4)] transition duration-700"
             />
           ))}
+
         </div>
-      </motion.section>
 
-      {/* ================= GIRL ================= */}
-      <motion.section
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="px-6 py-24 bg-white/30 backdrop-blur-xl rounded-t-[60px]"
-      >
+      </section>
 
-        <h2 className="text-6xl font-black text-center text-pink-700 mb-8">
+      {/* ================= GIRL SECTION ================= */}
+      <section className="px-6 py-24 bg-white/30 backdrop-blur-xl rounded-t-[60px]">
+
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-6xl font-black text-center text-pink-700 mb-8"
+        >
           If We Had A Daughter
-        </h2>
+        </motion.h2>
 
         <p className="text-center text-2xl text-rose-900 mb-20">
-          She’d inherit your beautiful smile and curious soul
+          She’d inherit your beautiful smile and curiosity
         </p>
 
         <div className="grid md:grid-cols-3 gap-10">
@@ -177,9 +213,9 @@ export default function Home() {
               img: "https://images.meesho.com/images/products/238824507/sjl3y_512.webp?width=512",
               link: "https://www.meesho.com/"
             }
-          ].map((item, i) => (
+          ].map((item, index) => (
             <motion.div
-              key={i}
+              key={index}
               whileHover={{ scale: 1.05, y: -10 }}
               className="bg-white rounded-[40px] overflow-hidden shadow-2xl"
             >
@@ -198,22 +234,22 @@ export default function Home() {
           ))}
 
         </div>
-      </motion.section>
 
-      {/* ================= BOY ================= */}
-      <motion.section
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="px-6 py-24"
-      >
+      </section>
 
-        <h2 className="text-6xl font-black text-center text-blue-700 mb-8">
+      {/* ================= BOY SECTION ================= */}
+      <section className="px-6 py-24">
+
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-6xl font-black text-center text-blue-700 mb-8"
+        >
           If We Had A Son
-        </h2>
+        </motion.h2>
 
         <p className="text-center text-2xl text-blue-900 mb-20">
-          He’d probably be your little troublemaker
+          A little troublemaker with your heart
         </p>
 
         <div className="grid md:grid-cols-3 gap-10">
@@ -234,9 +270,9 @@ export default function Home() {
               img: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSdVR1NYG-quUdyzA9YCtiLdO4ziqYwCrff7rU4RU2KneW1qFZzaeKwvniTT91wYBUHQ_6OrD-ajXFBye-7uHQ6CvFQt60h",
               link: "https://www.amazon.in/s?k=baby+boy+toys"
             }
-          ].map((item, i) => (
+          ].map((item, index) => (
             <motion.div
-              key={i}
+              key={index}
               whileHover={{ scale: 1.05, y: -10 }}
               className="bg-white rounded-[40px] overflow-hidden shadow-2xl"
             >
@@ -255,14 +291,11 @@ export default function Home() {
           ))}
 
         </div>
-      </motion.section>
+
+      </section>
 
       {/* ================= ENDING ================= */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        className="py-32 px-6 text-center"
-      >
+      <section className="py-32 px-6 text-center">
 
         <motion.div
           animate={{ scale: [1, 1.2, 1] }}
@@ -280,7 +313,7 @@ export default function Home() {
           Every version of my future becomes beautiful the moment you’re in it.
         </p>
 
-      </motion.section>
+      </section>
 
     </main>
   )
