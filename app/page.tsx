@@ -249,7 +249,7 @@ export default function Home() {
         </motion.h2>
 
         <p className="text-center text-2xl text-blue-900 mb-20">
-          A little troublemaker with your heart
+          He would probably get a gf and love her more , and you will love him more than me , but i dont mind
         </p>
 
         <div className="grid md:grid-cols-3 gap-10">
