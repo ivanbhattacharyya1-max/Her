@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main className="relative overflow-hidden bg-gradient-to-b from-pink-100 via-rose-100 to-pink-200 min-h-screen transform-gpu">
 
-      {/* 🌌 AURORA BACKGROUND */}
+      {/* 🌌 BACKGROUND AURORA */}
       <div className="fixed inset-0 -z-20 overflow-hidden">
 
         <motion.div
@@ -43,15 +43,8 @@ export default function Home() {
         {stars.map((s) => (
           <motion.div
             key={s.id}
-            initial={{
-              y: "110vh",
-              x: s.x,
-              opacity: 0
-            }}
-            animate={{
-              y: "-20vh",
-              opacity: [0, 1, 1, 0]
-            }}
+            initial={{ y: "110vh", x: s.x, opacity: 0 }}
+            animate={{ y: "-20vh", opacity: [0, 1, 1, 0] }}
             transition={{
               duration: s.duration,
               repeat: Infinity,
@@ -70,15 +63,8 @@ export default function Home() {
         {hearts.map((h) => (
           <motion.div
             key={h.id}
-            initial={{
-              y: "120vh",
-              x: h.x,
-              opacity: 0
-            }}
-            animate={{
-              y: "-20vh",
-              opacity: [0, 1, 1, 0]
-            }}
+            initial={{ y: "120vh", x: h.x, opacity: 0 }}
+            animate={{ y: "-20vh", opacity: [0, 1, 1, 0] }}
             transition={{
               duration: h.duration,
               repeat: Infinity,
@@ -93,7 +79,7 @@ export default function Home() {
       </div>
 
       {/* ================= HERO ================= */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
 
         <motion.div
           animate={{ scale: [1, 1.2, 1] }}
@@ -119,10 +105,10 @@ export default function Home() {
         >
           Vishakha,
           <br /><br />
-          Somewhere deep in my heart,
-          I already know that one day you’re going to create the warmest,
-          most beautiful home filled with love, laughter, tiny footsteps,
-          and a future I’ll always cherish with you.
+          Somewhere deep in my heart, I already know that one day
+          you’re going to create the warmest, most beautiful home
+          filled with love, laughter, tiny footsteps, and a future
+          I’ll always cherish with you.
         </motion.p>
 
         <motion.img
@@ -147,90 +133,76 @@ export default function Home() {
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-10">
-
-          {["/us1.jpg", "/us2.jpg", "/us3.jpg"].map((img, index) => (
+          {["/us1.jpg", "/us2.jpg", "/us3.jpg"].map((img, i) => (
             <motion.img
-              key={index}
-              whileHover={{ scale: 1.05, rotate: index % 2 ? -1 : 1 }}
+              key={i}
+              whileHover={{ scale: 1.05, rotate: i % 2 ? -1 : 1 }}
               src={img}
               className="rounded-[40px] h-[500px] w-full object-cover shadow-2xl border border-white hover:shadow-[0_30px_80px_rgba(255,105,180,0.4)] transition duration-700"
             />
           ))}
-
         </div>
 
       </section>
 
-      {/* ================= GIRL SECTION ================= */}
+      {/* ================= GIRL ================= */}
       <section className="px-6 py-24 bg-white/30 backdrop-blur-xl rounded-t-[60px]">
 
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-6xl font-black text-center text-pink-700 mb-8"
-        >
+        <h2 className="text-6xl font-black text-center text-pink-700 mb-8">
           If We Had A Daughter
-        </motion.h2>
+        </h2>
 
         <p className="text-center text-2xl text-rose-900 mb-20">
-          She’d inherit your beautiful smile and curiosity
+          She’d inherit your smile and curiosity
         </p>
 
         <div className="grid md:grid-cols-3 gap-10">
 
-          {[
-            {
-              title: "Floral Baby Dress",
-              img: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ3RVpJlPLitsx2zBsC4XmZKi531dfBp0lUD0fCgoaCCxUeWtJASJz2pOjO0OmDB3JqsRGyijDDMCaemTqBSqLb2JxURXco3jG9zkiT_ULQ",
-              link: "https://www.inayahfashion.com"
-            },
-            {
-              title: "Tiny Princess Heels",
-              img: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSzI7aJu5RfV2ySjwoDNaHcS-je7GwXbd1yE74CySgacOa8jaqT92ner4pzlcDuVcVlUf-KyFwgJq1VFZhFrYoJn121RuCRlA",
-              link: "https://www.amazon.in"
-            },
-            {
-              title: "Cute Baby Toy",
-              img: "https://images.meesho.com/images/products/238824507/sjl3y_512.webp",
-              link: "https://www.meesho.com"
-            }
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05, y: -10 }}
-              className="bg-white rounded-[40px] overflow-hidden shadow-2xl"
-            >
-              <img src={item.img} className="h-80 w-full object-cover" />
-              <div className="p-8">
-                <h3 className="text-3xl font-bold">{item.title}</h3>
-                <a
-                  href={item.link}
-                  target="_blank"
-                  className="inline-block mt-6 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-8 py-3 rounded-full"
-                >
-                  View Product
-                </a>
-              </div>
-            </motion.div>
-          ))}
+          {/* CLOTHES */}
+          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
+            <img
+              src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ3RVpJlPLitsx2zBsC4XmZKi531dfBp0lUD0fCgoaCCxUeWtJASJz2pOjO0OmDB3JqsRGyijDDMCaemTqBSqLb2JxURXco3jG9zkiT_ULQ"
+              className="h-80 w-full object-cover"
+            />
+            <div className="p-8">
+              <h3 className="text-3xl font-bold">Floral Baby Dress</h3>
+            </div>
+          </div>
+
+          {/* HEELS */}
+          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
+            <img
+              src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSzI7aJu5RfV2ySjwoDNaHcS-je7GwXbd1yE74CySgacOa8jaqT92ner4pzlcDuVcVlUf-KyFwgJq1VFZhFrYoJn121RuCRlA"
+              className="h-80 w-full object-cover"
+            />
+            <div className="p-8">
+              <h3 className="text-3xl font-bold">Tiny Princess Heels</h3>
+            </div>
+          </div>
+
+          {/* TOY */}
+          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
+            <img
+              src="https://images.meesho.com/images/products/238824507/sjl3y_512.webp"
+              className="h-80 w-full object-cover"
+            />
+            <div className="p-8">
+              <h3 className="text-3xl font-bold">Cute Baby Toy</h3>
+            </div>
+          </div>
 
         </div>
-
       </section>
 
-      {/* ================= BOY SECTION (RESTORED) ================= */}
+      {/* ================= BOY ================= */}
       <section className="px-6 py-24">
 
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-6xl font-black text-center text-blue-700 mb-8"
-        >
+        <h2 className="text-6xl font-black text-center text-blue-700 mb-8">
           If We Had A Son
-        </motion.h2>
+        </h2>
 
         <p className="text-center text-2xl text-blue-900 mb-20">
-          He’d probably make a gf and love her more, but still I know you will love him more than me and I don't mind
+          He’d probably be your little troublemaker
         </p>
 
         <div className="grid md:grid-cols-3 gap-10">
@@ -238,53 +210,63 @@ export default function Home() {
           {[
             {
               title: "Tiny Gentleman Outfit",
-              img: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3KDGuQBx2mnicATAyIZczmSkVKXwc-dsWB2rFTQWA1WngnMgt-yThh3ucDqlDtWAsc4rMGcT512k1H1XOyj9h51bx6up1XoD7z9MbVeBWz7T29qa-iWbI",
-              link: "https://www.amazon.in/s?k=baby+boy+outfit"
+              img: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3KDGuQBx2mnicATAyIZczmSkVKXwc-dsWB2rFTQWA1WngnMgt-yThh3ucDqlDtWAsc4rMGcT512k1H1XOyj9h51bx6up1XoD7z9MbVeBWz7T29qa-iWbI"
             },
             {
               title: "Little Explorer Shoes",
-              img: "https://m.media-amazon.com/images/I/51z6xqGUL8L.jpg",
-              link: "https://www.amazon.in/s?k=baby+boy+shoes"
+              img: "https://m.media-amazon.com/images/I/51z6xqGUL8L.jpg"
             },
             {
               title: "Future Troublemaker Toys",
-              img: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSdVR1NYG-quUdyzA9YCtiLdO4ziqYwCrff7rU4RU2KneW1qFZzaeKwvniTT91wYBUHQ_6OrD-ajXFBye-7uHQ6CvFQt60h",
-              link: "https://www.amazon.in/s?k=baby+boy+toys"
+              img: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSdVR1NYG-quUdyzA9YCtiLdO4ziqYwCrff7rU4RU2KneW1qFZzaeKwvniTT91wYBUHQ_6OrD-ajXFBye-7uHQ6CvFQt60h"
             }
           ].map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05, y: -10 }}
-              className="bg-white rounded-[40px] overflow-hidden shadow-2xl"
-            >
+            <div key={i} className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
               <img src={item.img} className="h-80 w-full object-cover" />
               <div className="p-8">
                 <h3 className="text-3xl font-bold">{item.title}</h3>
-                <a
-                  href={item.link}
-                  target="_blank"
-                  className="inline-block mt-6 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-full"
-                >
-                  View Product
-                </a>
               </div>
-            </motion.div>
+            </div>
           ))}
 
         </div>
 
       </section>
 
-      {/* ================= ENDING ================= */}
-      <section className="py-32 px-6 text-center">
+      {/* ================= PREGNANCY ================= */}
+      <section className="px-6 py-24 bg-white/30 backdrop-blur-xl rounded-[60px] mx-6 mb-20">
 
-        <motion.div
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="text-7xl mb-10"
-        >
-          💖
-        </motion.div>
+        <h2 className="text-6xl font-black text-center text-rose-700 mb-8">
+          Taking Care Of You
+        </h2>
+
+        <p className="text-center text-2xl text-rose-900 mb-20">
+          Because your comfort will always matter to me 💖
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-10">
+
+          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
+            <img src="https://images.pexels.com/photos/7089629/pexels-photo-7089629.jpeg" className="h-80 w-full object-cover" />
+            <div className="p-8"><h3 className="text-3xl font-bold">Maternity Wear</h3></div>
+          </div>
+
+          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
+            <img src="https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg" className="h-80 w-full object-cover" />
+            <div className="p-8"><h3 className="text-3xl font-bold">Pregnancy Vitamins</h3></div>
+          </div>
+
+          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
+            <img src="https://images.pexels.com/photos/4050347/pexels-photo-4050347.jpeg" className="h-80 w-full object-cover" />
+            <div className="p-8"><h3 className="text-3xl font-bold">Pregnancy Pillow</h3></div>
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ================= END ================= */}
+      <section className="py-32 px-6 text-center">
 
         <h2 className="text-6xl font-black text-rose-700">
           To Our Future, Vishakha
