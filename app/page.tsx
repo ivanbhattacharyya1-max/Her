@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main className="relative overflow-hidden bg-gradient-to-b from-pink-100 via-rose-100 to-pink-200 min-h-screen transform-gpu">
 
-      {/* 🌌 BACKGROUND AURORA */}
+      {/* 🌌 AURORA */}
       <div className="fixed inset-0 -z-20 overflow-hidden">
 
         <motion.div
@@ -105,10 +105,10 @@ export default function Home() {
         >
           Vishakha,
           <br /><br />
-          Somewhere deep in my heart, I already know that one day
-          you’re going to create the warmest, most beautiful home
-          filled with love, laughter, tiny footsteps, and a future
-          I’ll always cherish with you.
+          Somewhere deep in my heart,
+          I already know that one day you’re going to create the warmest,
+          most beautiful home filled with love, laughter, tiny footsteps,
+          and a future I’ll always cherish with you.
         </motion.p>
 
         <motion.img
@@ -124,15 +124,12 @@ export default function Home() {
       {/* ================= MEMORIES ================= */}
       <section className="px-6 py-24">
 
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-6xl font-black text-center text-rose-700 mb-20"
-        >
+        <h2 className="text-6xl font-black text-center text-rose-700 mb-20">
           Our Memories
-        </motion.h2>
+        </h2>
 
         <div className="grid md:grid-cols-3 gap-10">
+
           {["/us1.jpg", "/us2.jpg", "/us3.jpg"].map((img, i) => (
             <motion.img
               key={i}
@@ -141,6 +138,7 @@ export default function Home() {
               className="rounded-[40px] h-[500px] w-full object-cover shadow-2xl border border-white hover:shadow-[0_30px_80px_rgba(255,105,180,0.4)] transition duration-700"
             />
           ))}
+
         </div>
 
       </section>
@@ -158,40 +156,32 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-10">
 
-          {/* CLOTHES */}
           <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
-            <img
-              src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ3RVpJlPLitsx2zBsC4XmZKi531dfBp0lUD0fCgoaCCxUeWtJASJz2pOjO0OmDB3JqsRGyijDDMCaemTqBSqLb2JxURXco3jG9zkiT_ULQ"
-              className="h-80 w-full object-cover"
-            />
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ3RVpJlPLitsx2zBsC4XmZKi531dfBp0lUD0fCgoaCCxUeWtJASJz2pOjO0OmDB3JqsRGyijDDMCaemTqBSqLb2JxURXco3jG9zkiT_ULQ" className="h-80 w-full object-cover" />
             <div className="p-8">
               <h3 className="text-3xl font-bold">Floral Baby Dress</h3>
+              <a href="https://www.inayahfashion.com/products/red-button-up-ruffle-top-with-floral-print-skirt-for-girls" target="_blank" className="text-pink-500 underline">View Product</a>
             </div>
           </div>
 
-          {/* HEELS */}
           <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
-            <img
-              src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSzI7aJu5RfV2ySjwoDNaHcS-je7GwXbd1yE74CySgacOa8jaqT92ner4pzlcDuVcVlUf-KyFwgJq1VFZhFrYoJn121RuCRlA"
-              className="h-80 w-full object-cover"
-            />
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSzI7aJu5RfV2ySjwoDNaHcS-je7GwXbd1yE74CySgacOa8jaqT92ner4pzlcDuVcVlUf-KyFwgJq1VFZhFrYoJn121RuCRlA" className="h-80 w-full object-cover" />
             <div className="p-8">
               <h3 className="text-3xl font-bold">Tiny Princess Heels</h3>
+              <a href="https://www.amazon.in/Newborn-Princess-Bowknot-Infant-Photography/dp/B0GSRPKC16" target="_blank" className="text-pink-500 underline">View Product</a>
             </div>
           </div>
 
-          {/* TOY */}
           <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
-            <img
-              src="https://images.meesho.com/images/products/238824507/sjl3y_512.webp"
-              className="h-80 w-full object-cover"
-            />
+            <img src="https://images.meesho.com/images/products/238824507/sjl3y_512.webp" className="h-80 w-full object-cover" />
             <div className="p-8">
               <h3 className="text-3xl font-bold">Cute Baby Toy</h3>
+              <a href="https://www.meesho.com/" target="_blank" className="text-pink-500 underline">View Product</a>
             </div>
           </div>
 
         </div>
+
       </section>
 
       {/* ================= BOY ================= */}
@@ -202,32 +192,34 @@ export default function Home() {
         </h2>
 
         <p className="text-center text-2xl text-blue-900 mb-20">
-          He’d probably be your little troublemaker
+          He’d probably make a gf and love her more
         </p>
 
         <div className="grid md:grid-cols-3 gap-10">
 
-          {[
-            {
-              title: "Tiny Gentleman Outfit",
-              img: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3KDGuQBx2mnicATAyIZczmSkVKXwc-dsWB2rFTQWA1WngnMgt-yThh3ucDqlDtWAsc4rMGcT512k1H1XOyj9h51bx6up1XoD7z9MbVeBWz7T29qa-iWbI"
-            },
-            {
-              title: "Little Explorer Shoes",
-              img: "https://m.media-amazon.com/images/I/51z6xqGUL8L.jpg"
-            },
-            {
-              title: "Future Troublemaker Toys",
-              img: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSdVR1NYG-quUdyzA9YCtiLdO4ziqYwCrff7rU4RU2KneW1qFZzaeKwvniTT91wYBUHQ_6OrD-ajXFBye-7uHQ6CvFQt60h"
-            }
-          ].map((item, i) => (
-            <div key={i} className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
-              <img src={item.img} className="h-80 w-full object-cover" />
-              <div className="p-8">
-                <h3 className="text-3xl font-bold">{item.title}</h3>
-              </div>
+          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3KDGuQBx2mnicATAyIZczmSkVKXwc-dsWB2rFTQWA1WngnMgt-yThh3ucDqlDtWAsc4rMGcT512k1H1XOyj9h51bx6up1XoD7z9MbVeBWz7T29qa-iWbI" className="h-80 w-full object-cover" />
+            <div className="p-8">
+              <h3 className="text-3xl font-bold">Tiny Gentleman Outfit</h3>
+              <a href="https://www.amazon.in/s?k=baby+boy+outfit" target="_blank" className="text-blue-500 underline">View Product</a>
             </div>
-          ))}
+          </div>
+
+          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
+            <img src="https://m.media-amazon.com/images/I/51z6xqGUL8L.jpg" className="h-80 w-full object-cover" />
+            <div className="p-8">
+              <h3 className="text-3xl font-bold">Little Explorer Shoes</h3>
+              <a href="https://www.amazon.in/s?k=baby+boy+shoes" target="_blank" className="text-blue-500 underline">View Product</a>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSdVR1NYG-quUdyzA9YCtiLdO4ziqYwCrff7rU4RU2KneW1qFZzaeKwvniTT91wYBUHQ_6OrD-ajXFBye-7uHQ6CvFQt60h" className="h-80 w-full object-cover" />
+            <div className="p-8">
+              <h3 className="text-3xl font-bold">Future Troublemaker Toys</h3>
+              <a href="https://www.amazon.in/s?k=baby+boy+toys" target="_blank" className="text-blue-500 underline">View Product</a>
+            </div>
+          </div>
 
         </div>
 
@@ -241,24 +233,33 @@ export default function Home() {
         </h2>
 
         <p className="text-center text-2xl text-rose-900 mb-20">
-          Because your comfort will always matter to me 💖
+          Because your comfort will always matter 💖
         </p>
 
         <div className="grid md:grid-cols-3 gap-10">
 
           <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
             <img src="https://images.pexels.com/photos/7089629/pexels-photo-7089629.jpeg" className="h-80 w-full object-cover" />
-            <div className="p-8"><h3 className="text-3xl font-bold">Maternity Wear</h3></div>
+            <div className="p-8">
+              <h3 className="text-3xl font-bold">Maternity Wear</h3>
+              <a href="https://www.firstcry.com/maternity-wear" target="_blank" className="text-rose-500 underline">View Product</a>
+            </div>
           </div>
 
           <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
             <img src="https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg" className="h-80 w-full object-cover" />
-            <div className="p-8"><h3 className="text-3xl font-bold">Pregnancy Vitamins</h3></div>
+            <div className="p-8">
+              <h3 className="text-3xl font-bold">Pregnancy Vitamins</h3>
+              <a href="https://www.apollopharmacy.in/categories/vitamins-and-supplements" target="_blank" className="text-rose-500 underline">View Product</a>
+            </div>
           </div>
 
           <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl">
             <img src="https://images.pexels.com/photos/4050347/pexels-photo-4050347.jpeg" className="h-80 w-full object-cover" />
-            <div className="p-8"><h3 className="text-3xl font-bold">Pregnancy Pillow</h3></div>
+            <div className="p-8">
+              <h3 className="text-3xl font-bold">Pregnancy Pillow</h3>
+              <a href="https://www.amazon.in/s?k=pregnancy+pillow" target="_blank" className="text-rose-500 underline">View Product</a>
+            </div>
           </div>
 
         </div>
