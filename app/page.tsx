@@ -4,18 +4,17 @@ import { motion } from "framer-motion"
 
 export default function Home() {
 
-  // stable random generator (IMPORTANT FIX)
   const stars = Array.from({ length: 50 }).map((_, i) => ({
     id: i,
-    x: Math.random() * 1200,
-    duration: 10 + Math.random() * 15,
+    x: Math.random() * 1400,
+    duration: 12 + Math.random() * 15,
     delay: Math.random() * 5
   }))
 
   const hearts = Array.from({ length: 18 }).map((_, i) => ({
     id: i,
-    x: Math.random() * 1200,
-    duration: 12 + Math.random() * 10,
+    x: Math.random() * 1400,
+    duration: 14 + Math.random() * 10,
     delay: Math.random() * 8
   }))
 
@@ -39,7 +38,7 @@ export default function Home() {
 
       </div>
 
-      {/* ✨ STARS (FIXED - NO MORE BROKEN ANIMATION) */}
+      {/* ✨ STARS */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         {stars.map((s) => (
           <motion.div
@@ -59,7 +58,7 @@ export default function Home() {
               ease: "linear",
               delay: s.delay
             }}
-            className="absolute will-change-transform"
+            className="absolute"
           >
             <div className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_10px_white]" />
           </motion.div>
@@ -107,7 +106,6 @@ export default function Home() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
           className="text-7xl md:text-8xl font-black text-rose-700 drop-shadow-lg"
         >
           Our Future
@@ -121,10 +119,10 @@ export default function Home() {
         >
           Vishakha,
           <br /><br />
-          Somewhere deep in my heart, I already know that one day
-          you’re going to create the warmest, most beautiful home
-          filled with love, laughter, tiny footsteps, and a future
-          I’ll always cherish with you.
+          Somewhere deep in my heart,
+          I already know that one day you’re going to create the warmest,
+          most beautiful home filled with love, laughter, tiny footsteps,
+          and a future I’ll always cherish with you.
         </motion.p>
 
         <motion.img
@@ -209,6 +207,63 @@ export default function Home() {
                   href={item.link}
                   target="_blank"
                   className="inline-block mt-6 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-8 py-3 rounded-full"
+                >
+                  View Product
+                </a>
+              </div>
+            </motion.div>
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* ================= BOY SECTION (RESTORED) ================= */}
+      <section className="px-6 py-24">
+
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-6xl font-black text-center text-blue-700 mb-8"
+        >
+          If We Had A Son
+        </motion.h2>
+
+        <p className="text-center text-2xl text-blue-900 mb-20">
+          He’d probably make a gf and love her more, but still I know you will love him more than me and I don't mind
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-10">
+
+          {[
+            {
+              title: "Tiny Gentleman Outfit",
+              img: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3KDGuQBx2mnicATAyIZczmSkVKXwc-dsWB2rFTQWA1WngnMgt-yThh3ucDqlDtWAsc4rMGcT512k1H1XOyj9h51bx6up1XoD7z9MbVeBWz7T29qa-iWbI",
+              link: "https://www.amazon.in/s?k=baby+boy+outfit"
+            },
+            {
+              title: "Little Explorer Shoes",
+              img: "https://m.media-amazon.com/images/I/51z6xqGUL8L.jpg",
+              link: "https://www.amazon.in/s?k=baby+boy+shoes"
+            },
+            {
+              title: "Future Troublemaker Toys",
+              img: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSdVR1NYG-quUdyzA9YCtiLdO4ziqYwCrff7rU4RU2KneW1qFZzaeKwvniTT91wYBUHQ_6OrD-ajXFBye-7uHQ6CvFQt60h",
+              link: "https://www.amazon.in/s?k=baby+boy+toys"
+            }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05, y: -10 }}
+              className="bg-white rounded-[40px] overflow-hidden shadow-2xl"
+            >
+              <img src={item.img} className="h-80 w-full object-cover" />
+              <div className="p-8">
+                <h3 className="text-3xl font-bold">{item.title}</h3>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  className="inline-block mt-6 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-full"
                 >
                   View Product
                 </a>
